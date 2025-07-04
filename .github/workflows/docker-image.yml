@@ -23,7 +23,7 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/${{ matrix.app }}:latest ./${{ matrix.app }}
+        docker build -t ${{ secrets.DOCKER_USERNAME }}/${{ matrix.app }}:latest .  #./${{ matrix.app }}
 
     - name: Push Docker image
       run: |
