@@ -8,7 +8,7 @@ app = Flask(__name__)
 def hello():
     hostname = socket.gethostname()
     ip_address = socket.gethostbyname(hostname)
-    color = os.environ.get('COLOR', 'white')  # Change for each app
+    color = os.environ.get('COLOR', 'yellow')  # Change for each app
 
     html = f"""
     <html>
