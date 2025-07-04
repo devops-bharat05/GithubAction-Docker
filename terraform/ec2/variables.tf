@@ -1,6 +1,6 @@
 variable "aws_region" {
   type    = string
-  default = "ap-south-1"
+  default = "us-east-1"  # Replace with your desired AWS region
 }
 
 variable "aws_access_key" {
@@ -15,6 +15,6 @@ variable "aws_secret_key" {
 
 variable "key_name" {
   type    = string
-  default = "your-keypair-name"  # Replace with your actual key pair
+  default = "my-key-pair"  # Replace with your actual key pair
 }
 
