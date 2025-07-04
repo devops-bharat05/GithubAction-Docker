@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  installation:
     runs-on: self-hosted # Important: Specifies your private runner
     steps:
     - uses: actions/checkout@v4
