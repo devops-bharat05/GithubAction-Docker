@@ -14,9 +14,4 @@ jobs:
       run: |
         chmod +x ./install_docker_if_needed.sh
         ./install_docker_if_needed.sh
-
-    - name: Build Docker image
-      run: docker build -t my-app .
-
-    - name: Run Docker container (example)
-      run: docker run my-app echo "Hello from Docker container!"
+ 
