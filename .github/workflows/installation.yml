@@ -1,4 +1,4 @@
-name: Docker-installation-imagebuild-and-push
+name: Tool-Installation
 
 on:
   push:
