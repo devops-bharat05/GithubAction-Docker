@@ -18,7 +18,3 @@ variable "key_name" {
   default = "your-keypair-name"  # Replace with your actual key pair
 }
 
-variable "my_ip" {
-  description = "Your IP address in CIDR format (e.g., 203.0.113.0/32)"
-  type        = string
-}
