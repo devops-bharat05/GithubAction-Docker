@@ -1,0 +1,22 @@
+name: Docker-installation-imagebuild-and-push
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: self-hosted # Important: Specifies your private runner
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Ensure Docker is installed and running
+      run: |
+        chmod +x ./install_docker_if_needed.sh
+        ./install_docker_if_needed.sh
+
+    - name: Build Docker image
+      run: docker build -t my-app .
+
+    - name: Run Docker container (example)
+      run: docker run my-app echo "Hello from Docker container!"
