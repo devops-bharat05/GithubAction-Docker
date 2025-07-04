@@ -12,8 +12,6 @@ jobs:
 
     - name: Ensure Docker is installed and running
       run: |
-        chmod +x ./install_docker_if_needed.sh
-        ./install_docker_if_needed.sh
         chmod +x ./tool-installation-runner.sh
         ./tool-installation-runner.sh
   
