@@ -10,7 +10,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: terraform/ec2
+        working-directory: terraform/ec2-runner
 
     steps:
       - name: Checkout Code
