@@ -1,0 +1,33 @@
+name: Add Self-Hosted Runner
+
+on:
+  workflow_dispatch:  # Allows manual triggering of the workflow
+
+jobs:
+  add-runner:
+    runs-on: uubntu-latest  # Or a suitable GitHub-hosted runner
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Runner (on your self-hosted machine)
+        run: |
+          # Replace with commands to connect to your self-hosted machine (e.g., SSH) and execute the install_runner.sh script
+          # Ensure you pass the necessary environment variables:
+          # REPO_URL: https://github.com/devops-bharat05/GithubAction-Docker
+          # RUNNER_TOKEN: Generate a registration token (see instructions below)
+          # RUNNER_LABELS: Optional labels for your runner (e.g., "self-hosted,linux,my-label")
+          # RUNNER_NAME: Optional name for your runner
+          # Example using SSH:
+          # ssh user@your_runner_ip "export REPO_URL='${{ github.repositoryUrl }}' export RUNNER_TOKEN='${{ secrets.RUNNER_REGISTRATION_TOKEN }}' export RUNNER_LABELS='self-hosted,linux' export RUNNER_NAME='my-self-hosted-runner'; bash -s" < ./install_runner.sh
+        env:
+          # Securely store your runner registration token as a GitHub secret
+          RUNNER_REGISTRATION_TOKEN: ${{ secrets.RUNNER_REGISTRATION_TOKEN }}
+          # Pass the repository URL directly
+          REPO_URL: ${{ github.repositoryUrl }}
+
+      - name: Verify Runner Registration (Optional)
+        run: |
+          # You might have steps here to verify the runner is online after registration
+          # (e.g., check GitHub Actions settings or use the GitHub API)
