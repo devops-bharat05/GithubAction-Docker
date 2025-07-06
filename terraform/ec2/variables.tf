@@ -18,3 +18,4 @@ variable "key_name" {
   default = "my-key-pair"  # Replace with your actual key pair
 }
 
+ 
